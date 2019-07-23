@@ -33,7 +33,7 @@ public class ClienteDAO {
     public void edit(Cliente cliente) {
         
         for (Cliente c : clientes) {
-            if(cliente.equals(c.getCodigo())) {
+            if(cliente.getCodigo() == c.getCodigo()) {
                 c.setNome(cliente.getNome());
                 c.setCidade(cliente.getCidade());
             }
