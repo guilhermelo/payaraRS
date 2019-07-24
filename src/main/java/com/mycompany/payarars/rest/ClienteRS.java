@@ -43,17 +43,12 @@ public class ClienteRS {
     @PUT
     @Consumes(value = MediaType.APPLICATION_JSON)
     public void edit(Cliente cliente) {
-        
-        
-        
         new ClienteDAO().edit(cliente);
     }
     
     @DELETE
     @Path("/{codigo}")
-    public void delete(int codigo) {
-        Cliente cliente = new Cliente();
-        cliente.setCodigo(codigo);
-        new ClienteDAO().remove(cliente);
+    public void delete(@PathParam("codigo") int codigo) {
+        new ClienteDAO().remove(codigo);
     }
 }

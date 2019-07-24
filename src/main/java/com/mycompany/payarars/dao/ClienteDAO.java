@@ -26,8 +26,12 @@ public class ClienteDAO {
         clientes.add(cliente);
     }
     
-    public void remove(Cliente cliente) {
-        clientes.remove(cliente);
+    public void remove(int codigo) {
+        for(int i = 0; i < clientes.size(); i++) {
+            if(clientes.get(i).getCodigo() == codigo) {
+                clientes.remove(i);
+            }
+        }
     }
     
     public void edit(Cliente cliente) {
